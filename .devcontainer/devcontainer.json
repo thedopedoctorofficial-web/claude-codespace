@@ -6,7 +6,15 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo '✅ Claude Code geïnstalleerd!'",
+  "postCreateCommand": "npm install -g @anthropic-ai/claude-code && sudo apt-get update -qq && sudo apt-get install -y -qq ttyd && echo '✅ Alles geïnstalleerd!'",
+  "postStartCommand": "nohup ttyd -p 7681 -t fontSize=16 -t 'theme={\"background\":\"#1a1a2e\",\"foreground\":\"#eee\"}' bash > /tmp/ttyd.log 2>&1 &",
+  "forwardPorts": [7681],
+  "portsAttributes": {
+    "7681": {
+      "label": "Terminal (Mobile)",
+      "onAutoForward": "notify"
+    }
+  },
   "customizations": {
     "vscode": {
       "settings": {
