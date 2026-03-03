@@ -1,6 +1,11 @@
 {
   "name": "Claude Code Workspace",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  },
   "postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo '✅ Claude Code geïnstalleerd!'",
   "customizations": {
     "vscode": {
