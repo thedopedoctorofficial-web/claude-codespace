@@ -1,20 +1,12 @@
 {
   "name": "Claude Code Workspace",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "22"
-    }
-  },
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22",
   "postCreateCommand": "npm install -g @anthropic-ai/claude-code && echo '✅ Claude Code geïnstalleerd!'",
   "customizations": {
-    "codespaces": {
-      "openFiles": []
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
     }
-  },
-  "forwardPorts": [],
-  "hostRequirements": {
-    "cpus": 2,
-    "memory": "4gb"
   }
 }
